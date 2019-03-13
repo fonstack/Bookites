@@ -6,9 +6,8 @@
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "start": "nodemon -e scss -x \"npm run compile:sass\"",
-
-    "compile:sass": "node-sass --include-path scss sass/main.scss css/style.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.prefix.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
@@ -22,6 +21,5 @@
     "postcss-cli": "^4.1.1",
     "nodemon": "^1.18.10"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
